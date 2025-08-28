@@ -1,0 +1,27 @@
+{
+  "name": "kana-transfer",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^26.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.3"
+  },
+  "build": {
+    "appId": "jonathan.jnsg@gmail.com",
+    "productName": "KanaTransfer Tools",
+    "win": {
+      "target": "nsis",
+      "icon": "icono.ico"
+    },
+    "directories": {
+      "output": "dist"
+    }
+  }
+}

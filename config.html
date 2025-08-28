@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Configuración</title>
+<style>
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  background:transparent;
+  overflow:hidden;
+}
+
+#container {
+  width:600px;
+  height:400px;
+  border-radius:15%;
+  background:rgba(6, 0, 39, 0.85);
+  color:white;
+  -webkit-app-region: drag;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 0 25px rgba(0,0,0,0.6);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
+}
+
+h1{margin:25px 0;}
+label{display:block;margin:10px 0 5px;}
+select,input,textarea{
+  width:80%;
+  margin:5px 0;
+  padding:8px;
+  border-radius:5px;
+  border:none;
+  background:rgba(255,255,255,0.1);
+  color:white;
+  -webkit-app-region: no-drag;
+  appearance:none;
+}
+select option{
+  background-color: rgba(30,30,30,0.95);
+  color:white;
+}
+input:focus,textarea:focus,select:focus{
+  background:rgba(255,255,255,0.25);
+}
+#saveBtn{background:#1e90ff;color:white;}
+#saveBtn:hover{background:#32cd32;transform:scale(1.1);}
+#exitBtn{background:#ff4c4c;color:white;}
+#exitBtn:hover{background:#ffb700;transform:scale(1.1);}
+button{
+  padding:10px 25px;
+  margin:10px;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:all 0.2s ease;
+  -webkit-app-region: no-drag;
+}
+#iconInput {
+    display: none; /* ocultamos el input original */
+  }
+  #uploadBtn {
+    background: #1e90ff;
+    color: white;
+    height: 20px;
+    
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+  }
+  #uploadBtn:hover {
+    background: #32cd32;
+    transform: scale(1.05);
+  }
+  #previewIcon {
+    width: 80px;
+    height: 20px;
+    margin-left: 15px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid #fff;
+    background: rgba(255,255,255,0.1);
+  }
+  .upload-container {
+    display: flex;
+    align-items: center;
+
+  }
+</style>
+</head>
+<body>
+<div id="container">
+    <h2>Configuración</h2>
+    <div class="upload-container" style="-webkit-app-region: no-drag;">
+      <label for="iconInput" id="uploadBtn" style="-webkit-app-region: no-drag;">Subir Imagen</label>
+      <input type="file" id="iconInput" accept="image/*" style="display:none;-webkit-app-region:no-drag;">
+      <img id="previewIcon" src="" alt="Preview" style="width:70px;height:25px;margin-left:15px;border-radius:8px;object-fit:cover;background:#222;-webkit-app-region:no-drag;">
+    </div>
+    <label>SMTP (user;pass;host;port):</label>
+    <input type="text" id="smtpInput">
+    <label>Correos destino (separados por ,):</label>
+    <input type="text" id="toInput">
+    <label>IT Support (separados por ,):</label>
+    <input type="text" id="itInput">
+    <div>
+      <button id="saveBtn">Guardar</button>
+      <button id="exitBtn">Salir</button>
+    </div>
+    <script src="config.js"></script>
+</div>
+</body>
+</html>
